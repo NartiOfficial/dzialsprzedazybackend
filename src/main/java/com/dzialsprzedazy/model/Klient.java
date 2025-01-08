@@ -1,4 +1,4 @@
-package com.dzialsprzedazy.repository;
+package com.dzialsprzedazy.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,7 +9,7 @@ import jakarta.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-class Klient {
+public class Klient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

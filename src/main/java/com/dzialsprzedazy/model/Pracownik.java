@@ -1,4 +1,4 @@
-package com.dzialsprzedazy.repository;
+package com.dzialsprzedazy.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
