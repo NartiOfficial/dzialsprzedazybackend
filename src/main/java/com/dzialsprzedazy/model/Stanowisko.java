@@ -1,4 +1,6 @@
 package com.dzialsprzedazy.model;
 
-enum Stanowisko {
+public enum Stanowisko {
+    Kierownik,
+    Pracownik
 }
