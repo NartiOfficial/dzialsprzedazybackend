@@ -8,7 +8,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-class ZamowienieTowar {
+public class ZamowienieTowar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -15,7 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-class Zamowienie {
+public class Zamowienie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

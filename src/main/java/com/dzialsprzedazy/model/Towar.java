@@ -8,7 +8,7 @@ import jakarta.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-class Towar {
+public class Towar {
     @Id
     private Long id;
 
