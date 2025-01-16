@@ -1,4 +1,7 @@
 package com.dzialsprzedazy.model;
 
-enum Status {
+public enum Status {
+    ZREALIZOWANE,
+    W_TRAKCIE,
+    ANULOWANE
 }

@@ -17,10 +17,6 @@ public class Klient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
-
     private String imie;
 
     private String nazwisko;
@@ -38,92 +34,83 @@ public class Klient {
     @OneToMany(mappedBy = "klient")
     private List<Zamowienie> zamowienia;
 
-    Long getId() {
+    public Long getId() {
         return id;
     }
 
-    Klient setId(final Long id) {
+    public Klient setId(final Long id) {
         this.id = id;
         return this;
     }
 
-    User getUser() {
-        return user;
-    }
-
-    Klient setUser(final User user) {
-        this.user = user;
-        return this;
-    }
-
-    String getImie() {
+    public String getImie() {
         return imie;
     }
 
-    Klient setImie(final String imie) {
+    public Klient setImie(final String imie) {
         this.imie = imie;
         return this;
     }
 
-    String getNazwisko() {
+    public String getNazwisko() {
         return nazwisko;
     }
 
-    Klient setNazwisko(final String nazwisko) {
+    public Klient setNazwisko(final String nazwisko) {
         this.nazwisko = nazwisko;
         return this;
     }
 
-    String getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    Klient setEmail(final String email) {
+    public Klient setEmail(final String email) {
         this.email = email;
         return this;
     }
 
-    String getUlica() {
+    public String getUlica() {
         return ulica;
     }
 
-    Klient setUlica(final String ulica) {
+    public Klient setUlica(final String ulica) {
         this.ulica = ulica;
         return this;
     }
 
-    String getNumer() {
+    public String getNumer() {
         return numer;
     }
 
-    Klient setNumer(final String numer) {
+    public Klient setNumer(final String numer) {
         this.numer = numer;
         return this;
     }
 
-    String getKodPocztowy() {
+    public String getKodPocztowy() {
         return kodPocztowy;
     }
 
-    Klient setKodPocztowy(final String kodPocztowy) {
+    public Klient setKodPocztowy(final String kodPocztowy) {
         this.kodPocztowy = kodPocztowy;
         return this;
     }
 
-    String getMiasto() {
+    public String getMiasto() {
         return miasto;
     }
 
-    Klient setMiasto(final String miasto) {
+    public Klient setMiasto(final String miasto) {
         this.miasto = miasto;
         return this;
     }
 
-    List<Zamowienie> getZamowienia() {
+    public List<Zamowienie> getZamowienia() {
         return zamowienia;
     }
 
-    Klient setZamowienia(final List<Zamowienie> zamowienia) {
+    public Klient setZamowienia(final List<Zamowienie> zamowienia) {
         this.zamowienia = zamowienia;
         return this;
     }
