@@ -24,4 +24,60 @@ public class Towar {
     private Double stanMagazynowy;
 
     private String opis;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(final Long id) {
+        this.id = id;
+    }
+
+    public List<ZamowienieTowar> getZamowienieTowar() {
+        return zamowienieTowar;
+    }
+
+    public void setZamowienieTowar(final List<ZamowienieTowar> zamowienieTowar) {
+        this.zamowienieTowar = zamowienieTowar;
+    }
+
+    public String getNazwaProduktu() {
+        return nazwaProduktu;
+    }
+
+    public void setNazwaProduktu(final String nazwaProduktu) {
+        this.nazwaProduktu = nazwaProduktu;
+    }
+
+    public Double getCenaJednostkowa() {
+        return cenaJednostkowa;
+    }
+
+    public void setCenaJednostkowa(final Double cenaJednostkowa) {
+        this.cenaJednostkowa = cenaJednostkowa;
+    }
+
+    public String getJednostkaMiara() {
+        return jednostkaMiara;
+    }
+
+    public void setJednostkaMiara(final String jednostkaMiara) {
+        this.jednostkaMiara = jednostkaMiara;
+    }
+
+    public Double getStanMagazynowy() {
+        return stanMagazynowy;
+    }
+
+    public void setStanMagazynowy(final Double stanMagazynowy) {
+        this.stanMagazynowy = stanMagazynowy;
+    }
+
+    public String getOpis() {
+        return opis;
+    }
+
+    public void setOpis(final String opis) {
+        this.opis = opis;
+    }
 }

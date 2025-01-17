@@ -39,4 +39,68 @@ public class Zamowienie {
 
     @OneToMany(mappedBy = "zamowienie", cascade = CascadeType.ALL)
     private List<ZamowienieTowar> towary;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(final Long id) {
+        this.id = id;
+    }
+
+    public Klient getKlient() {
+        return klient;
+    }
+
+    public void setKlient(final Klient klient) {
+        this.klient = klient;
+    }
+
+    public Pracownik getPracownik() {
+        return pracownik;
+    }
+
+    public void setPracownik(final Pracownik pracownik) {
+        this.pracownik = pracownik;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(final Status status) {
+        this.status = status;
+    }
+
+    public Date getDataZalozenia() {
+        return dataZalozenia;
+    }
+
+    public void setDataZalozenia(final Date dataZalozenia) {
+        this.dataZalozenia = dataZalozenia;
+    }
+
+    public Date getTerminRealizacji() {
+        return terminRealizacji;
+    }
+
+    public void setTerminRealizacji(final Date terminRealizacji) {
+        this.terminRealizacji = terminRealizacji;
+    }
+
+    public Double getCenaLaczna() {
+        return cenaLaczna;
+    }
+
+    public void setCenaLaczna(final Double cenaLaczna) {
+        this.cenaLaczna = cenaLaczna;
+    }
+
+    public List<ZamowienieTowar> getTowary() {
+        return towary;
+    }
+
+    public void setTowary(final List<ZamowienieTowar> towary) {
+        this.towary = towary;
+    }
 }

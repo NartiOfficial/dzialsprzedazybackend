@@ -24,4 +24,44 @@ public class ZamowienieTowar {
     private Double ilosc;
 
     private Double cenaSprzedazy;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(final Long id) {
+        this.id = id;
+    }
+
+    public Zamowienie getZamowienie() {
+        return zamowienie;
+    }
+
+    public void setZamowienie(final Zamowienie zamowienie) {
+        this.zamowienie = zamowienie;
+    }
+
+    public Towar getTowar() {
+        return towar;
+    }
+
+    public void setTowar(final Towar towar) {
+        this.towar = towar;
+    }
+
+    public Double getIlosc() {
+        return ilosc;
+    }
+
+    public void setIlosc(final Double ilosc) {
+        this.ilosc = ilosc;
+    }
+
+    public Double getCenaSprzedazy() {
+        return cenaSprzedazy;
+    }
+
+    public void setCenaSprzedazy(final Double cenaSprzedazy) {
+        this.cenaSprzedazy = cenaSprzedazy;
+    }
 }

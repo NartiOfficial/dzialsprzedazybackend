@@ -1,13 +1,11 @@
 package com.dzialsprzedazy.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import lombok.Data;
 
 import java.util.List;
 
@@ -31,8 +29,23 @@ public class Klient {
 
     private String miasto;
 
-    @OneToMany(mappedBy = "klient")
+    @OneToMany(mappedBy = "klient", cascade = CascadeType.ALL)
     private List<Zamowienie> zamowienia;
+
+    public Klient(final Long id, final String imie, final String nazwisko, final String email, final String ulica, final String numer, final String kodPocztowy, final String miasto) {
+        this.id = id;
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.email = email;
+        this.ulica = ulica;
+        this.numer = numer;
+        this.kodPocztowy = kodPocztowy;
+        this.miasto = miasto;
+    }
+
+    public Klient() {
+
+    }
 
     public Long getId() {
         return id;
@@ -110,7 +123,7 @@ public class Klient {
         return zamowienia;
     }
 
-    public Klient setZamowienia(final List<Zamowienie> zamowienia) {
+    Klient setZamowienia(final List<Zamowienie> zamowienia) {
         this.zamowienia = zamowienia;
         return this;
     }
