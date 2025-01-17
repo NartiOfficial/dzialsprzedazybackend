@@ -11,6 +11,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -38,7 +39,7 @@ public class Zamowienie {
     private Double cenaLaczna;
 
     @OneToMany(mappedBy = "zamowienie", cascade = CascadeType.ALL)
-    private List<ZamowienieTowar> towary;
+    private List<ZamowienieTowar> towary = new ArrayList<>();
 
     public Long getId() {
         return id;

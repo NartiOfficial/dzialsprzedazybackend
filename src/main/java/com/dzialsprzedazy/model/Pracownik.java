@@ -1,5 +1,6 @@
 package com.dzialsprzedazy.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -27,7 +28,7 @@ public class Pracownik {
 
     private String email;
 
-    @OneToMany(mappedBy = "pracownik")
+    @OneToMany(mappedBy = "pracownik", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH}, orphanRemoval = false)
     private List<Zamowienie> zamowienia;
 
     public Long getId() {

@@ -2,6 +2,8 @@ package com.dzialsprzedazy.model;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
@@ -10,6 +12,7 @@ import java.util.List;
 @Entity
 public class Towar {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @OneToMany(mappedBy = "towar", cascade = CascadeType.ALL)
