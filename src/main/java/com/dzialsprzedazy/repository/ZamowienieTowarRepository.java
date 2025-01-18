@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ZamowienieTowarRepository extends JpaRepository<ZamowienieTowar, Long> {
     Page<ZamowienieTowar> findAll(Pageable pageable);
+
+    Page<ZamowienieTowar> findByZamowienieId(Long zamowienieId, Pageable pageable);
 }

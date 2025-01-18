@@ -1,6 +1,7 @@
 package com.dzialsprzedazy.controller;
 
 import com.dzialsprzedazy.dto.ZamowienieTowarDto;
+import com.dzialsprzedazy.dto.ZamowienieTowarWithProductNameDto;
 import com.dzialsprzedazy.service.ZamowienieTowarService;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
@@ -48,4 +49,13 @@ public class ZamowienieTowarController {
         zamowienieTowarService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/zamowienie/{zamowienieId}")
+    public ResponseEntity<Page<ZamowienieTowarWithProductNameDto>> getTowaryWithProductNameByZamowienieId(
+            @PathVariable Long zamowienieId,
+            Pageable pageable) {
+        Page<ZamowienieTowarWithProductNameDto> towary = zamowienieTowarService.findWithProductNameByZamowienieId(zamowienieId, pageable);
+        return ResponseEntity.ok(towary);
+    }
+
 }

@@ -111,4 +111,9 @@ public class ZamowienieService {
             throw new ValidationException("Data założenia nie może być pusta.");
         }
     }
+
+    public Page<ZamowienieDto> findByKlientId(Long klientId, Pageable pageable) {
+        return zamowienieRepository.findByKlientId(klientId, pageable)
+                .map(this::mapToDto);
+    }
 }

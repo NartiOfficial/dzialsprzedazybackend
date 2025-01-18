@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/zamowienia")
 public class ZamowienieController {
@@ -47,5 +49,13 @@ public class ZamowienieController {
     public ResponseEntity<Void> deleteZamowienie(@PathVariable Long id) {
         zamowienieService.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/klient/{klientId}")
+    public ResponseEntity<Page<ZamowienieDto>> getZamowieniaByKlientId(
+            @PathVariable Long klientId,
+            Pageable pageable) {
+        Page<ZamowienieDto> zamowienia = zamowienieService.findByKlientId(klientId, pageable);
+        return ResponseEntity.ok(zamowienia);
     }
 }

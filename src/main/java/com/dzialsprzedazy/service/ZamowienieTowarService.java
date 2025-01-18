@@ -1,6 +1,7 @@
 package com.dzialsprzedazy.service;
 
 import com.dzialsprzedazy.dto.ZamowienieTowarDto;
+import com.dzialsprzedazy.dto.ZamowienieTowarWithProductNameDto;
 import com.dzialsprzedazy.model.Zamowienie;
 import com.dzialsprzedazy.model.ZamowienieTowar;
 import com.dzialsprzedazy.model.Towar;
@@ -41,6 +42,11 @@ public class ZamowienieTowarService {
         ZamowienieTowar zamowienieTowar = mapToEntity(zamowienieTowarDto);
         ZamowienieTowar savedZamowienieTowar = zamowienieTowarRepository.save(zamowienieTowar);
         return mapToDto(savedZamowienieTowar);
+    }
+
+    public Page<ZamowienieTowarWithProductNameDto> findWithProductNameByZamowienieId(Long zamowienieId, Pageable pageable) {
+        return zamowienieTowarRepository.findByZamowienieId(zamowienieId, pageable)
+                .map(this::mapToWithProductNameDto);
     }
 
     public ZamowienieTowarDto update(Long id, ZamowienieTowarDto zamowienieTowarDto) {
@@ -100,4 +106,16 @@ public class ZamowienieTowarService {
             throw new ValidationException("Cena sprzedaży musi być większa lub równa zero.");
         }
     }
+
+    private ZamowienieTowarWithProductNameDto mapToWithProductNameDto(ZamowienieTowar zamowienieTowar) {
+        return new ZamowienieTowarWithProductNameDto(
+                zamowienieTowar.getId(),
+                zamowienieTowar.getZamowienie().getId(),
+                zamowienieTowar.getTowar().getId(),
+                zamowienieTowar.getTowar().getNazwaProduktu(),
+                zamowienieTowar.getIlosc(),
+                zamowienieTowar.getCenaSprzedazy()
+        );
+    }
+
 }
