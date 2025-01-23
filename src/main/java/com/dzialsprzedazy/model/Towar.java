@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
@@ -27,6 +28,19 @@ public class Towar {
     private Double stanMagazynowy;
 
     private String opis;
+
+    public Towar(final Long id, final String nazwaProduktu, final Double cenaJednostkowa, final String jednostkaMiara, final Double stanMagazynowy, final String opis) {
+        this.id = id;
+        this.nazwaProduktu = nazwaProduktu;
+        this.cenaJednostkowa = cenaJednostkowa;
+        this.jednostkaMiara = jednostkaMiara;
+        this.stanMagazynowy = stanMagazynowy;
+        this.opis = opis;
+    }
+
+    public Towar() {
+
+    }
 
     public Long getId() {
         return id;

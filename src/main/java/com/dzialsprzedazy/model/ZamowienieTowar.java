@@ -21,9 +21,21 @@ public class ZamowienieTowar {
     @JoinColumn(name = "towar_id", nullable = false)
     private Towar towar;
 
+    public ZamowienieTowar(final Long id, final Zamowienie zamowienie, final Towar towar, final Double ilosc, final Double cenaSprzedazy) {
+        this.id = id;
+        this.zamowienie = zamowienie;
+        this.towar = towar;
+        this.ilosc = ilosc;
+        this.cenaSprzedazy = cenaSprzedazy;
+    }
+
     private Double ilosc;
 
     private Double cenaSprzedazy;
+
+    public ZamowienieTowar() {
+
+    }
 
     public Long getId() {
         return id;

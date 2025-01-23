@@ -31,6 +31,19 @@ public class Pracownik {
     @OneToMany(mappedBy = "pracownik", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH}, orphanRemoval = false)
     private List<Zamowienie> zamowienia;
 
+    public Pracownik(final Long id, final String imie, final String nazwisko, final Stanowisko stanowisko, final String numerTelefonu, final String email) {
+        this.id = id;
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.stanowisko = stanowisko;
+        this.numerTelefonu = numerTelefonu;
+        this.email = email;
+    }
+
+    public Pracownik() {
+
+    }
+
     public Long getId() {
         return id;
     }

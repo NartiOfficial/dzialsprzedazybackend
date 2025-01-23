@@ -11,6 +11,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -40,6 +41,21 @@ public class Zamowienie {
 
     @OneToMany(mappedBy = "zamowienie", cascade = CascadeType.ALL)
     private List<ZamowienieTowar> towary = new ArrayList<>();
+
+    public Zamowienie(final Long id, final Klient klient, final Pracownik pracownik, final Status status, final Date dataZalozenia, final Date terminRealizacji, final Double cenaLaczna, final List<ZamowienieTowar> towary) {
+        this.id = id;
+        this.klient = klient;
+        this.pracownik = pracownik;
+        this.status = status;
+        this.dataZalozenia = dataZalozenia;
+        this.terminRealizacji = terminRealizacji;
+        this.cenaLaczna = cenaLaczna;
+        this.towary = towary;
+    }
+
+    public Zamowienie() {
+
+    }
 
     public Long getId() {
         return id;
